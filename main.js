@@ -1,5 +1,6 @@
 var objeto = []
 var canvasxd
+var gatogrisaseoconperroyplatoconfondosincopy = ""
 function setup() {
     mla = ml5.objectDetector("cocossd",
         () => { console.log("cargado listo para irme babay"); 
@@ -9,7 +10,14 @@ function setup() {
 
 }
 function preload() {
-    gatogrisaseoconperroyplatoconfondosincopy = loadImage("gatomalo.jpg")
+    valoro = localStorage.getItem("valoro")
+    switch(valoro){
+        case "1":gatogrisaseoconperroyplatoconfondosincopy = loadImage("gatomalo.jpg");break;
+        case "2":gatogrisaseoconperroyplatoconfondosincopy = loadImage("ro.jpeg");break;
+        case "3":gatogrisaseoconperroyplatoconfondosincopy = loadImage("ropelaropetuntun.png");break;
+        case "4":gatogrisaseoconperroyplatoconfondosincopy = loadImage("rotompido.jpeg");break;
+    }
+    
 }
 function draw() {
     image(gatogrisaseoconperroyplatoconfondosincopy, 0, 0, 400, 200);
@@ -33,4 +41,8 @@ function resultado(error, parametro) {
         console.log(parametro)
         objeto = parametro
     }
+}
+function churro(valor) {
+    localStorage.setItem("valoro",valor)
+    window.location = "indexdoz.html"
 }

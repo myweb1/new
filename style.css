@@ -1,3 +1,9 @@
 body {
-    background-image: url(20240324112246_1.jpg);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    background-color: black;
+    height: 100vh;
 }
